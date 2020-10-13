@@ -35,10 +35,10 @@ spec:
   source:
     type: Git
     git:
-      uri: '${change_me}'
+      uri: mikimoyal/vote-api
       ref: master
   triggers:
     - type: GitHub
       github:
-        secret: ${change_me}
+        secret: secret
   runPolicy: Serial
