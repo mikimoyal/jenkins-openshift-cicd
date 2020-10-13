@@ -35,7 +35,7 @@ spec:
   source:
     type: Git
     git:
-      uri: github.com/mikimoyal/openshift-tasks
+      uri: git@github.com:mikimoyal/openshift-tasks.git
       ref: master
   triggers:
     - type: GitHub
