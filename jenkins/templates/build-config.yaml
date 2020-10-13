@@ -28,7 +28,7 @@ spec:
         - name: APP_NAME
           value: tasks
         - name: APP_REPO
-          value: 'https://github.com/jstrickl-redhat/openshift-tasks.git'
+          value: 'https://github.com/mikimoyal/openshift-tasks.git'
         - name: APP_BRANCH
           value: master
   postCommit: {}
