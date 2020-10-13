@@ -35,7 +35,7 @@ spec:
   source:
     type: Git
     git:
-      uri: mikimoyal/vote-api
+      uri: /mikimoyal/openshift-tasks
       ref: master
   triggers:
     - type: GitHub
