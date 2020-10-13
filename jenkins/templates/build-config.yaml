@@ -17,7 +17,7 @@ spec:
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:
-      jenkinsfilePath: pipelines/java/Jenkinsfile
+      jenkinsfilePath: jenkins/pipeline/java/Jenkinsfile
       env:
         - name: DEV_PROJECT
           value: dev
@@ -35,7 +35,7 @@ spec:
   source:
     type: Git
     git:
-      uri: git@github.com:mikimoyal/openshift-tasks.git
+      uri: https://github.com/mikimoyal/jenkins-openshift-cicd
       ref: master
   triggers:
     - type: GitHub
