@@ -52,7 +52,7 @@ pipeline {
                             echo "CREATING ${APP_NAME} in ${openshift.project()}"
                             echo "##########################################################"
 
-                            openshift.newApp("--name=${APP_NAME}", "https://raw.githubusercontent.com/jstrickl-redhat/openshift-tasks/master/app-template.yaml", "-n", "${DEV_PROJECT}")
+                            openshift.newApp("--name=${APP_NAME}", "https://raw.githubusercontent.com/mikimoyal/openshift-tasks/master/app-template.yaml", "-n", "${DEV_PROJECT}")
                             openshift.set("triggers", "dc", "${APP_NAME}", "--remove-all")
                             openshift.set("triggers", "dc", "-l", "app=${APP_NAME}", "--containers=${APP_NAME}", "--from-image=${APP_NAME}:latest", "--manual")
                         }
@@ -68,7 +68,7 @@ pipeline {
                             }
                             
                             if(!openshift.selector("template", [template: "openshift-tasks"]).exists()){
-                                openshift.create(openshift.process("https://raw.githubusercontent.com/jstrickl-redhat/jenkins-openshift-cicd/master/openshift/templates/deploy/tasks-deploy.yaml", "-p", "APPLICATION_NAME=${APP_NAME}", "-p", "TAG=${project}", "-p", "NAMESPACE=${project}"))
+                                openshift.create(openshift.process("https://raw.githubusercontent.com/mikimoyal/jenkins-openshift-cicd/master/openshift/templates/deploy/tasks-deploy.yaml", "-p", "APPLICATION_NAME=${APP_NAME}", "-p", "TAG=${project}", "-p", "NAMESPACE=${project}"))
                             }
                           
                             openshift.set("triggers", "dc", "-l", "app=${APP_NAME}", "--containers=${APP_NAME}", "--from-image=${APP_NAME}:stage", "--manual")
